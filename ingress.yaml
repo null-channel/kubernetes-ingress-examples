@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: example-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /foo
+        backend:
+          serviceName: foo-service
+          servicePort: 5678
+      - path: /bar
+        backend:
+          serviceName: bar-service
+          servicePort: 5678
